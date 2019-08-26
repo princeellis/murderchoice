@@ -432,4 +432,9 @@ code {
   font-size: 11px;
   color: #666;
 }
-
+.namegame {
+  test-align: center;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #666;
+}
