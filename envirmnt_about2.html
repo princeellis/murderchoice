@@ -1,114 +1,95 @@
 <!DOCTYPE html>
 <html>
-   
-   <head>
-      <meta name = "viewport" content = "width = device-width, initial-scale = 1, 
-         maximum-scale = 1, minimum-scale = 1, user-scalable = no, minimal-ui" />
-      <meta name = "apple-mobile-web-app-capable" content = "yes" />
-      <meta name = "apple-mobile-web-app-status-bar-style" content = "black" />
-      <title>My App</title>
-      <link rel = "stylesheet" 
-         href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.min.css" />
-      <link rel = "stylesheet" 
-         href = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.colors.min.css" />
-   </head>
-   
-   <body>
-      <div class = "statusbar-overlay"></div>
-      <div class = "panel-overlay"></div>
-      
-      <div class = "panel panel-right panel-reveal">
-         <div class = "content-block">
-            <p>Contents goesd here...</p>
-         </div>
-      </div>
-      
-      <div class = "views">
-         <div class = "view view-main">
-            <div class = "navbar">
-               <div class = "navbar-inner">
-                 <a class="link back" href="index.html">
-                       <i class="icon icon-back" style=""></i>
-                       <span class="ios-only">Back</span>
-                   </a>     
-               </div>
-            </div>
-            
-            <div class = "pages navbar-through toolbar-through">
-               <div data-page = "index" class = "page">
-                  <div class = "page-content">
-                     <div class = "list-block">
-                        <ul>
-                           <li>
-                              <a href = "envirmnt_about2.html" class = "">
-                                 <div class = "item-content">
-                                    <div class = "item-inner">
-                                        
-                                        <div class = "item-title">Randomize</div>
-               
-                                    </div>
-                                        
-                                 </div>
-                              </a>
-                           </li> 
-             
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            
-           
-         </div>
-      </div>
-      
- <script>type = "text/javascript" 
-         src = "https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/js/framework7.min.js">
-         alert('Roles');
-         
- var roles = ["murderer", "sheriff", "innocent", "innocent"];
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
 
-roles.sort(function(a, b){return 0.5 - Math.random()});
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
-   for (i = 0; i < 4; i++) {
-    
-    var answer = confirm (" You are the " + roles[i] +".");
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
 
-  if (answer)
-       alert ("Press Ok.");
-   else
-      alert ("Must Resume");
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-  }            
- </script>
-      
-      <script>
-     //     here initialize the app
-         var myApp = new Framework7();
-             cache: false /* disable caching */
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
 
-     //     If your using custom DOM library, then save it to $$ variable
-         var $$ = Dom7;
+<h2>Modal Example</h2>
 
-    //      Add the view
-         var mainView = myApp.addView('.view-main', {
-            
-    //         enable the dynamic navbar for this view:
-            dynamicNavbar: true
-         });
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
 
-   //      use the 'pageInit' event handler for all pages
-       $$(document).on('pageInit', function (e) {
-         
-     //       get page data from event data
-        var page = e.detail.page;
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-    }      
-            
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 </script>
-         
-   
-   </body>
 
+</body>
 </html>
- 
